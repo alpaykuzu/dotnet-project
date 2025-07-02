@@ -1,4 +1,4 @@
-﻿using API.DTOs;
+﻿using API.DTOs.User;
 using API.Entities;
 using AutoMapper;
 
@@ -16,6 +16,17 @@ namespace API.Profiles
                 {
                     dest.Token = context.Items["Token"] as String ?? "";
                     dest.RefreshToken = context.Items["RefreshToken"] as String ?? "";
+                });
+
+            CreateMap<RegisterRequest, User>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.PasswordHash, opt => opt.Ignore())
+                .ForMember(dest => dest.RefreshTokens, opt => opt.Ignore())
+                .ForMember(dest => dest.Role, opt => opt.Ignore())
+                .AfterMap((src, dest, context) =>
+                {
+                    dest.PasswordHash = context.Items["PasswordHash"] as String ?? "";
+                    dest.Role = context.Items["Role"] as String ?? "";
                 });
         }
     }

@@ -1,4 +1,5 @@
-﻿using API.DTOs;
+﻿using API.DTOs.Token;
+using API.DTOs.User;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

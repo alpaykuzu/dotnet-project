@@ -9,13 +9,13 @@
     "Parameters": [
       {
         "Name": "req",
-        "Type": "API.DTOs.LoginRequest",
+        "Type": "API.DTOs.User.LoginRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "YirmibesYazilim.Framework.Models.Responses.Response\u00601[[API.DTOs.LoginResponse, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "YirmibesYazilim.Framework.Models.Responses.Response\u00601[[API.DTOs.User.LoginResponse, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -35,7 +35,7 @@
     "Parameters": [
       {
         "Name": "tokenRequest",
-        "Type": "API.DTOs.TokenRequest",
+        "Type": "API.DTOs.Token.TokenRequest",
         "IsRequired": true
       }
     ],
@@ -61,7 +61,7 @@
     "Parameters": [
       {
         "Name": "req",
-        "Type": "API.DTOs.RegisterRequest",
+        "Type": "API.DTOs.User.RegisterRequest",
         "IsRequired": true
       }
     ],

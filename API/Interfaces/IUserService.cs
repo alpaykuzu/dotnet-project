@@ -1,4 +1,5 @@
-﻿using API.DTOs;
+﻿using API.DTOs.Token;
+using API.DTOs.User;
 using Microsoft.AspNetCore.Mvc;
 using YirmibesYazilim.Framework.Models.Responses;
 

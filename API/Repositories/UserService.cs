@@ -1,5 +1,6 @@
 ﻿using API.Data;
-using API.DTOs;
+using API.DTOs.Token;
+using API.DTOs.User;
 using API.Entities;
 using API.Interfaces;
 using AutoMapper;
@@ -26,14 +27,21 @@ namespace API.Repositories
             if (await _appDbContext.Users.AnyAsync(u => u.Email == request.Email))
                 return Response<NoContent>.Fail("Zaten kayıtlı hesap!", HttpStatusCode.BadRequest); ;
 
-            var user = new User
+            //var user = new User
+            //{
+            //    Email = request.Email,
+            //    FirstName = request.FirstName,
+            //    LastName = request.LastName,
+            //    PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+            //    Role = "User"
+            //};
+
+            var user = _mapper.Map<RegisterRequest, User>(request, opt =>
             {
-                Email = request.Email,
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
-                Role = "User"
-            };
+                opt.Items["PasswordHash"] = BCrypt.Net.BCrypt.HashPassword(request.Password);
+                opt.Items["Role"] = "User";
+            });
+
             await _appDbContext.Users.AddAsync(user);
             await _appDbContext.SaveChangesAsync();
             return Response<NoContent>.Success(HttpStatusCode.OK, "Kayıt başarılı");

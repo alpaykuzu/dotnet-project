@@ -1,5 +1,5 @@
 using API.Data;
-using API.DTOs;
+using API.DTOs.User;
 using API.Interfaces;
 using API.Profiles;
 using API.Repositories;
