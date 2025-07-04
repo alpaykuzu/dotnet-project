@@ -12,11 +12,9 @@ namespace API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
-        private readonly ITokenService _tokenService;
-        public UsersController(IUserService userService, ITokenService tokenService)
+        public UsersController(IUserService userService)
         {
             _userService = userService;
-            _tokenService = tokenService;
         }
 
         [HttpPost("register")]
@@ -31,7 +29,7 @@ namespace API.Controllers
             return Ok(await _userService.LoginAsync(req));
         }
 
-        [HttpPost("refreshToken")]
+        [HttpPost("refresh-token")]
         public async Task<ActionResult<Response<NoContent>>> RefreshToken(TokenRequest tokenRequest)
         {
             return Ok(await _userService.RefreshTokenAsync(tokenRequest));

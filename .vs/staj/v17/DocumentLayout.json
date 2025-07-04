@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\repositories\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\repositories\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\dtos\\token\\tokenresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\dtos\\token\\tokenresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\dtos\\user\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\dtos\\user\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\repositories\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\repositories\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\repositories\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\repositories\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\profiles\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\profiles\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\dtos\\user\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\dtos\\user\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|c:\\users\\alpay\\source\\repos\\dotnet-project\\api\\repositories\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8499AD1C-CEAB-4FE5-8B3C-7B5B19490E62}|API\\API.csproj|solutionrelative:api\\repositories\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,81 +62,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "API\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Entities\\User.cs",
-              "RelativeToolTip": "API\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T10:45:45.903Z",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\appsettings.json",
+              "RelativeDocumentMoniker": "API\\appsettings.json",
+              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\appsettings.json",
+              "RelativeToolTip": "API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-04T06:52:55.534Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RegisterRequest.cs",
-              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\DTOs\\User\\RegisterRequest.cs",
-              "RelativeDocumentMoniker": "API\\DTOs\\User\\RegisterRequest.cs",
-              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\DTOs\\User\\RegisterRequest.cs",
-              "RelativeToolTip": "API\\DTOs\\User\\RegisterRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Profiles\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "API\\Profiles\\AutoMapperProfile.cs",
+              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Profiles\\AutoMapperProfile.cs",
+              "RelativeToolTip": "API\\Profiles\\AutoMapperProfile.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBUAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T10:45:40.561Z",
+              "WhenOpened": "2025-07-03T14:05:39.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\DTOs\\User\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "API\\DTOs\\User\\LoginResponse.cs",
+              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\DTOs\\User\\LoginResponse.cs",
+              "RelativeToolTip": "API\\DTOs\\User\\LoginResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:35:00.487Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "TokenResponse.cs",
+              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\DTOs\\Token\\TokenResponse.cs",
+              "RelativeDocumentMoniker": "API\\DTOs\\Token\\TokenResponse.cs",
+              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\DTOs\\Token\\TokenResponse.cs",
+              "RelativeToolTip": "API\\DTOs\\Token\\TokenResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:29:32.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Repositories\\UserService.cs",
               "RelativeDocumentMoniker": "API\\Repositories\\UserService.cs",
               "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Repositories\\UserService.cs",
               "RelativeToolTip": "API\\Repositories\\UserService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAmwCsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAgwGgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-01T07:11:39.627Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AutoMapperProfile.cs",
-              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Profiles\\AutoMapperProfile.cs",
-              "RelativeDocumentMoniker": "API\\Profiles\\AutoMapperProfile.cs",
-              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Profiles\\AutoMapperProfile.cs",
-              "RelativeToolTip": "API\\Profiles\\AutoMapperProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T07:07:58.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "API\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Repositories\\TokenService.cs",
+              "RelativeDocumentMoniker": "API\\Repositories\\TokenService.cs",
+              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Repositories\\TokenService.cs",
+              "RelativeToolTip": "API\\Repositories\\TokenService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAADwvxIAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T06:23:31.792Z",
+              "WhenOpened": "2025-07-02T14:08:40.717Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "API\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T11:35:41.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "API\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T11:32:29.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Repositories\\ProductService.cs",
               "RelativeDocumentMoniker": "API\\Repositories\\ProductService.cs",
               "ToolTip": "C:\\Users\\alpay\\source\\repos\\dotnet-project\\API\\Repositories\\ProductService.cs",
               "RelativeToolTip": "API\\Repositories\\ProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwA8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAvwDcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T10:36:06.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T10:36:06.899Z"
             }
           ]
         }

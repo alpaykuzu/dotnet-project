@@ -7,7 +7,7 @@ namespace API.Interfaces
 {
     public interface ITokenService
     {
-        public string GenerateToken(IEnumerable<Claim> claim);
+        public string GenerateToken(IEnumerable<Claim> claim, int minutes);
         public string GenerateRefreshToken();
     }
 }

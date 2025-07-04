@@ -1,5 +1,74 @@
 [
   {
+    "ContainingType": "API.Controllers.ProductsController",
+    "Method": "AddProduct",
+    "RelativePath": "api/Products/add-product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "API.DTOs.Product.ProductRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Controllers.ProductsController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/Products/delete-product",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Controllers.ProductsController",
+    "Method": "GetProduct",
+    "RelativePath": "api/Products/get-product",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Controllers.ProductsController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/Products/update-product",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "productRequest",
+        "Type": "API.DTOs.Product.ProductRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API.Controllers.UsersController",
     "Method": "Login",
     "RelativePath": "api/Users/login",
@@ -28,7 +97,7 @@
   {
     "ContainingType": "API.Controllers.UsersController",
     "Method": "RefreshToken",
-    "RelativePath": "api/Users/refreshToken",
+    "RelativePath": "api/Users/refresh-token",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

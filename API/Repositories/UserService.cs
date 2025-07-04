@@ -16,6 +16,8 @@ namespace API.Repositories
         private readonly AppDbContext _appDbContext;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
+        private int AccessTokenMinutes = 1;
+        private int RefreshTokenDays = 1;
         public UserService(AppDbContext appDbContext, ITokenService tokenService, IMapper mapper) 
         {
             _appDbContext = appDbContext;
@@ -26,15 +28,6 @@ namespace API.Repositories
         {
             if (await _appDbContext.Users.AnyAsync(u => u.Email == request.Email))
                 return Response<NoContent>.Fail("Zaten kayıtlı hesap!", HttpStatusCode.BadRequest); ;
-
-            //var user = new User
-            //{
-            //    Email = request.Email,
-            //    FirstName = request.FirstName,
-            //    LastName = request.LastName,
-            //    PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
-            //    Role = "User"
-            //};
 
             var user = _mapper.Map<RegisterRequest, User>(request, opt =>
             {
@@ -58,14 +51,15 @@ namespace API.Repositories
             {
                 new Claim(ClaimTypes.Email, request.Email),
             };
-            var token = _tokenService.GenerateToken(claims);
+
+            var token = _tokenService.GenerateToken(claims, AccessTokenMinutes);
 
             var generatedRefreshToken = _tokenService.GenerateRefreshToken();
             var refreshToken = new RefreshToken
             {
                 Token = generatedRefreshToken,
                 UserId = user.Id,
-                ExpirationDate = DateTime.UtcNow.AddDays(7)
+                ExpirationDate = DateTime.Now.AddDays(RefreshTokenDays)
             };
 
             var existingToken = await _appDbContext.RefreshTokens.FirstOrDefaultAsync(x => x.UserId == user.Id);
@@ -87,6 +81,8 @@ namespace API.Repositories
             {
                 opt.Items["Token"] = token;
                 opt.Items["RefreshToken"] = generatedRefreshToken;
+                opt.Items["AccessTokenExpTime"] = DateTime.Now.AddMinutes(AccessTokenMinutes).ToString("o");
+                opt.Items["RefreshTokenExpTime"] = DateTime.Now.AddDays(RefreshTokenDays).ToString("o");
             });
 
             return Response<LoginResponse>.Success(loginResponse, HttpStatusCode.OK, "Giriş başarılı");
@@ -103,20 +99,20 @@ namespace API.Repositories
             {
                 new Claim(ClaimTypes.Email, existingToken.User.Email)
             };
-            var newGEneratedToken = _tokenService.GenerateToken(claims);
+            var newGeneratedToken = _tokenService.GenerateToken(claims, AccessTokenMinutes);
             var newGeneratedRefreshToken = _tokenService.GenerateRefreshToken();
 
             var newRefreshToken = new RefreshToken
             {
                 Token = newGeneratedRefreshToken,
-                ExpirationDate = DateTime.UtcNow.AddDays(7)
+                ExpirationDate = DateTime.UtcNow.AddDays(RefreshTokenDays)
             };
 
             existingToken.Token = newRefreshToken.Token;
             existingToken.ExpirationDate = newRefreshToken.ExpirationDate;
             _appDbContext.RefreshTokens.Update(existingToken);
             _appDbContext.SaveChanges();
-            var tokenResponse = new TokenResponse { AccessToken = newGEneratedToken, RefreshToken = newGeneratedRefreshToken };
+            var tokenResponse = new TokenResponse { AccessToken = newGeneratedToken, RefreshToken = newGeneratedRefreshToken , AccessTokenExpTime = DateTime.Now.AddMinutes(AccessTokenMinutes).ToString("o"), RefreshTokenExpTime = DateTime.Now.AddDays(RefreshTokenDays).ToString("o") };
 
             return Response<TokenResponse>.Success(tokenResponse,HttpStatusCode.OK, "Token güncellendi");
         }
