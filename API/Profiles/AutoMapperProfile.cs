@@ -1,5 +1,6 @@
 ﻿using API.DTOs.Product;
 using API.DTOs.User;
+using API.DTOs.UserRole;
 using API.Entities;
 using AutoMapper;
 
@@ -26,15 +27,26 @@ namespace API.Profiles
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.PasswordHash, opt => opt.Ignore())
                 .ForMember(dest => dest.RefreshTokens, opt => opt.Ignore())
-                .ForMember(dest => dest.Role, opt => opt.Ignore())
+                .ForMember(dest => dest.Roles, opt => opt.Ignore())
                 .AfterMap((src, dest, context) =>
                 {
                     dest.PasswordHash = context.Items["PasswordHash"] as String ?? "";
-                    dest.Role = context.Items["Role"] as String ?? "";
+                    //dest.Roles = (List<UserRole>)context.Items["UserRoles"];
                 });
 
             CreateMap<ProductRequest, Product>();
             CreateMap<Product, ProductResponse>();
+
+            CreateMap<UserRoleRequest, UserRole>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
+                /*.AfterMap((src, dest, context) =>
+                {
+                    dest.User = (User)context.Items["User"];
+                });*/
+            CreateMap<UserRole, UserRoleResponse>();
+        
+
+
         }
     }
 }

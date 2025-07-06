@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
@@ -19,6 +19,7 @@ namespace API.Controllers
             _productService = productService;
         }
 
+        [AllowAnonymous]
         [HttpGet("get-product")]
         public async Task<IActionResult> GetProduct(int productId) 
         {

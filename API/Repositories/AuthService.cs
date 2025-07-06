@@ -1,6 +1,7 @@
 ﻿using API.Data;
 using API.DTOs.Token;
 using API.DTOs.User;
+using API.DTOs.UserRole;
 using API.Entities;
 using API.Interfaces;
 using AutoMapper;
@@ -11,32 +12,49 @@ using YirmibesYazilim.Framework.Models.Responses;
 
 namespace API.Repositories
 {
-    public class UserService : IUserService
+    public class AuthService : IAuthService
     {
         private readonly AppDbContext _appDbContext;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
+        private readonly IUserRoleService _roleService;
         private int AccessTokenMinutes = 1;
         private int RefreshTokenDays = 1;
-        public UserService(AppDbContext appDbContext, ITokenService tokenService, IMapper mapper) 
+        public AuthService(AppDbContext appDbContext, ITokenService tokenService, IMapper mapper, IUserRoleService userRoleService) 
         {
             _appDbContext = appDbContext;
             _tokenService = tokenService;
             _mapper = mapper;
+            _roleService = userRoleService;
         }
         public async Task<Response<NoContent>> RegisterAsync(RegisterRequest request)
         {
             if (await _appDbContext.Users.AnyAsync(u => u.Email == request.Email))
-                return Response<NoContent>.Fail("Zaten kayıtlı hesap!", HttpStatusCode.BadRequest); ;
+                return Response<NoContent>.Fail("Zaten kayıtlı hesap!", HttpStatusCode.BadRequest); 
+
+            if (request.Email == "admin@admin.com")
+            {
+                var admin = _mapper.Map<RegisterRequest, User>(request, opt =>
+                {
+                    opt.Items["PasswordHash"] = BCrypt.Net.BCrypt.HashPassword(request.Password);
+                });
+
+                await _appDbContext.Users.AddAsync(admin);
+                await _appDbContext.SaveChangesAsync();
+
+                await _roleService.AddUserRoleAsync(new UserRoleRequest { UserId = admin.Id, Role = "Admin" });
+                return Response<NoContent>.Success(HttpStatusCode.OK, "Kayıt başarılı");
+            }
 
             var user = _mapper.Map<RegisterRequest, User>(request, opt =>
             {
                 opt.Items["PasswordHash"] = BCrypt.Net.BCrypt.HashPassword(request.Password);
-                opt.Items["Role"] = "User";
             });
 
             await _appDbContext.Users.AddAsync(user);
             await _appDbContext.SaveChangesAsync();
+
+            await _roleService.AddUserRoleAsync(new UserRoleRequest { UserId = user.Id, Role = "User" });
             return Response<NoContent>.Success(HttpStatusCode.OK, "Kayıt başarılı");
         }
 
@@ -47,9 +65,11 @@ namespace API.Repositories
             if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
                 return Response<LoginResponse>.Fail("Giriş başarısız", HttpStatusCode.Unauthorized); ;
 
+            var role = await _roleService.GetUserRoleAsync(user.Id);
             var claims = new[]
             {
-                new Claim(ClaimTypes.Email, request.Email),
+                new Claim(ClaimTypes.Role, role.Data.Role),
+                new Claim(ClaimTypes.Email, user.Email)
             };
 
             var token = _tokenService.GenerateToken(claims, AccessTokenMinutes);
@@ -95,8 +115,10 @@ namespace API.Repositories
             {
                 return Response<TokenResponse>.Fail("Geçersiz veya tarihi geçmiş token!", HttpStatusCode.Unauthorized);
             }
+            var role = await _roleService.GetUserRoleAsync(existingToken.User.Id);
             var claims = new[]
             {
+                new Claim(ClaimTypes.Role, role.Data.Role),
                 new Claim(ClaimTypes.Email, existingToken.User.Email)
             };
             var newGeneratedToken = _tokenService.GenerateToken(claims, AccessTokenMinutes);

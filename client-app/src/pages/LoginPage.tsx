@@ -28,24 +28,26 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <h2>Giriş Yap</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <input
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-      />
-      <input
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Şifre"
-        type="password"
-        required
-      />
-      <button type="submit">Giriş</button>
+    <div>
+      <form onSubmit={handleLogin}>
+        <h2>Giriş Yap</h2>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+        />
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Şifre"
+          type="password"
+          required
+        />
+        <button type="submit">Giriş</button>
+      </form>
       <button onClick={register}>Hesabın yoksa kayıt ol.</button>
-    </form>
+    </div>
   );
 }

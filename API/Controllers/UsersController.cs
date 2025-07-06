@@ -11,8 +11,9 @@ namespace API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IUserService _userService;
-        public UsersController(IUserService userService)
+        private readonly IAuthService _userService;
+        private readonly ITokenService _tokenService;
+        public UsersController(IAuthService userService)
         {
             _userService = userService;
         }

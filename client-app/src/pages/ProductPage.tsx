@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ProductService } from "../services/ProductService";
 import { useAuth } from "../context/AuthProvider";
 import type { ProductResponse } from "../types/product";
+import { UserRoleService } from "../services/UserRoleService";
 
 export function ProductPage() {
   const [product, setProduct] = useState<ProductResponse | null>(null);
@@ -17,6 +18,10 @@ export function ProductPage() {
   const [isProductDeleted, setIsProductDeleted] = useState("");
 
   const [isProductUpdated, setIsProductUpdated] = useState("");
+
+  const [role, setRole] = useState("");
+  const [userId, setUserId] = useState(0);
+  const [isRoleUpdated, setIsRoleUpdated] = useState("");
 
   const fetchProduct = async () => {
     setError("");
@@ -70,6 +75,18 @@ export function ProductPage() {
         productQuantity,
       });
       setIsProductUpdated(result);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
+
+  const updateRole = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    try {
+      const result = await UserRoleService.updateUserRole({ role, userId });
+      setIsRoleUpdated(result);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.message);
@@ -175,6 +192,24 @@ export function ProductPage() {
         {isProductUpdated && (
           <p style={{ color: "orange" }}>{isProductUpdated}</p>
         )}
+      </form>
+      <form onSubmit={updateRole}>
+        <input
+          type="number"
+          placeholder="Kullanıcı Id"
+          //value={productQuantity}
+          required
+          onChange={(e) => setUserId(parseInt(e.target.value))}
+        />
+        <input
+          type="text"
+          placeholder="Yeni Rol"
+          //value={productDescription}
+          required
+          onChange={(e) => setRole(e.target.value)}
+        />
+        {isRoleUpdated && <p style={{ color: "orange" }}>{isRoleUpdated}</p>}
+        <button type="submit">Rol Güncelle</button>
       </form>
       <button onClick={logout}>Çıkış Yap</button>
     </div>

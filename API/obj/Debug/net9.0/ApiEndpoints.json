@@ -69,6 +69,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API.Controllers.UserRoleController",
+    "Method": "UpdateUserRole",
+    "RelativePath": "api/UserRole/update-user-role",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRoleRequest",
+        "Type": "API.DTOs.UserRole.UserRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API.Controllers.UsersController",
     "Method": "Login",
     "RelativePath": "api/Users/login",

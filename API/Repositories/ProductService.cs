@@ -5,6 +5,7 @@ using API.Interfaces;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
+using System.Threading.Tasks;
 using YirmibesYazilim.Framework.Models.Responses;
 
 namespace API.Repositories
@@ -41,12 +42,25 @@ namespace API.Repositories
             }
         }
 
+        public async Task<Response<List<ProductResponse>>> GetProductAllAsync()
+        {
+            var products = await _appDbContext.Products.OrderBy(p => p.Id).ToListAsync();
+
+            if (products.Count == 0)
+            {
+                return Response<List<ProductResponse>>.Fail("Ürün tablosu boş.", HttpStatusCode.BadRequest);
+            }
+
+            var response = _mapper.Map<List<Product>, List<ProductResponse>>(products);
+            return Response<List<ProductResponse>>.Success(response, HttpStatusCode.OK, "Başarılı!");
+        }
+
         public async Task<Response<ProductResponse>> GetProductAsync(int productId)
         {
             var product = await _appDbContext.Products.FirstOrDefaultAsync(x => x.Id == productId);
             if(product == null)
             {
-                return Response<ProductResponse>.Fail("Sorgu Başarısız", HttpStatusCode.BadRequest);
+                return Response<ProductResponse>.Fail("Ürün Yok.", HttpStatusCode.BadRequest);
             }
             else
             {
