@@ -1,1 +1,1 @@
-.NET + Angular project.
+    .NET + Angular project.
